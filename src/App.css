@@ -61,10 +61,160 @@
     padding: 0;
   }
 }
+.app {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-width: 80rem; /* Tailwind's max-w-7xl */
+  margin: 0 auto;
+  padding: 0 1.5rem; /* px-6 */
+}
+
+@media (min-width: 640px) { /* sm:px-16 */
+  .app {
+    padding: 0 4rem;
+  }
+}
+
+.black_btn {
+  border-radius: 9999px; /* rounded-full */
+  border: 1px solid black;
+  background-color: black;
+  color: white;
+  padding: 0.375rem 1.25rem; /* py-1.5 px-5 */
+  font-size: 0.875rem; /* text-sm */
+  transition: all 0.3s ease;
+}
+
+.black_btn:hover {
+  background-color: white;
+  color: black;
+}
+
+.head_text {
+  margin-top: 1.25rem; /* mt-5 */
+  font-size: 3rem; /* text-5xl */
+  font-weight: 800; /* font-extrabold */
+  line-height: 1.15; /* leading-[1.15] */
+  color: black;
+  text-align: center;
+}
+
+@media (min-width: 640px) { /* sm:text-6xl */
+  .head_text {
+    font-size: 3.75rem;
+  }
+}
+
+.orange_gradient {
+  background: linear-gradient(to right, #f59e0b, #f97316, #fbbf24); /* from amber-500 via orange-600 to yellow-500 */
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.desc {
+  margin-top: 1.25rem; /* mt-5 */
+  font-size: 1.125rem; /* text-lg */
+  color: #4b5563; /* text-gray-600 */
+  text-align: center;
+  max-width: 32rem; /* max-w-2xl */
+}
+
+@media (min-width: 640px) { /* sm:text-xl */
+  .desc {
+    font-size: 1.25rem;
+  }
+}
+
+.url_input {
+  display: block;
+  width: 100%; /* w-full */
+  border-radius: 0.375rem; /* rounded-md */
+  border: 1px solid #e5e7eb; /* border-gray-200 */
+  background-color: white;
+  padding: 0.625rem 3rem 0.625rem 2.5rem; /* py-2.5 pl-10 pr-12 */
+  font-family: 'Satoshi', sans-serif;
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 500; /* font-medium */
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1); /* shadow-lg */
+}
+
+.url_input:focus {
+  border-color: black;
+  outline: none;
+  box-shadow: none; /* focus:ring-0 */
+}
+
+.submit_btn {
+  position: absolute;
+  top: 0.375rem; /* my-1.5 */
+  right: 0.375rem; /* mr-1.5 */
+  bottom: 0.375rem;
+  display: flex;
+  width: 2.5rem; /* w-10 */
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.375rem; /* rounded */
+  border: 1px solid #e5e7eb; /* border-gray-200 */
+  color: #9ca3af; /* text-gray-400 */
+  font-family: sans-serif; /* font-sans */
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 500; /* font-medium */
+}
+
+.submit_btn:hover {
+  border-color: #374151; /* border-gray-700 */
+  color: #374151; /* text-gray-700 */
+}
+
+.link_card {
+  padding: 0.75rem; /* p-3 */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  background-color: white;
+  border: 1px solid #e5e7eb; /* border-gray-200 */
+  gap: 0.75rem; /* gap-3 */
+  border-radius: 0.5rem; /* rounded-lg */
+  cursor: pointer;
+}
+
+.copy_btn {
+  width: 1.75rem; /* w-7 */
+  height: 1.75rem; /* h-7 */
+  border-radius: 9999px; /* rounded-full */
+  background-color: rgba(255, 255, 255, 0.1); /* bg-white/10 */
+  box-shadow: inset 10px -50px 94px rgba(199, 199, 199, 0.2); /* shadow-[inset...] */
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.blue_gradient {
+  font-weight: 900; /* font-black */
+  background: linear-gradient(to right, #2563eb, #06b6d4); /* from-blue-600 to-cyan-600 */
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.summary_box {
+  border-radius: 0.75rem; /* rounded-xl */
+  border: 1px solid #e5e7eb; /* border-gray-200 */
+  background-color: rgba(255, 255, 255, 0.2); /* bg-white/20 */
+  box-shadow: inset 10px -50px 94px rgba(199, 199, 199, 0.2); /* shadow-[inset...] */
+  backdrop-filter: blur(10px);
+  padding: 1rem; /* p-4 */
+}
 
 /* Tailwind Styles */
 
-.app {
+/* .app {
   @apply relative z-10 flex justify-center items-center flex-col max-w-7xl mx-auto sm:px-16 px-6;
 }
 
@@ -106,4 +256,4 @@
 
 .summary_box {
   @apply rounded-xl border border-gray-200 bg-white/20 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur p-4;
-}
+} */
