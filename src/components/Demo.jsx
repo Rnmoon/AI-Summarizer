@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { linkIcon, copy, loader, tick} from '../assets'
 import {useLazyGetSummaryQuery} from '../services/article'
+
 const Demo = () => {
   const [article,setArticle] = useState({
     url:'',
@@ -43,6 +44,11 @@ const Demo = () => {
     navigator.clipboard.writeText(copyUrl)
     setTimeout(() => setCopied(false), 2000);
   }
+  const handleRemove = (index) => {
+    const updatedArticles = allArticle.filter((_, i) => i !== index);
+    setALLArticle(updatedArticles);
+    localStorage.setItem("articles", JSON.stringify(updatedArticles)); // Save to localStorage
+  };
   return (
   <section className="mt-16  w-full max-w-xl">
     <div className="flex flex-col w-full gap-2">
@@ -72,8 +78,15 @@ const Demo = () => {
                 <img src={copied === item.url ? tick : copy} alt="copy_icon" className="w-[40%] h-[40%] object-contain" />
               </div>
               <p className="flex-1 font-satoshi text-blue-700 font-medium text-sm truncate">{item.url}</p>
+              <button
+        onClick={() => handleRemove(index)}
+        className="ml-2 text-white text-xs px-2 py-1 rounded"
+      >
+      ❌
+      </button>
             </div>
           ))}
+          
       </div>
     </div>
     {/* Display Result */}
@@ -94,6 +107,7 @@ const Demo = () => {
           )}
     </div>
   </section>
+ 
   )
 };
 
