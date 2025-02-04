@@ -1,10 +1,14 @@
-import {logo} from '../assets';
+/* eslint-disable no-irregular-whitespace */
+
 import { motion } from "framer-motion";
 const Hero = () => {
   return (
     <header className='w-full flex justify-center items-center flex-col'>
       <nav className='w-full flex justify-between items-center mb-10 pt-3'>
-        <img src={logo} alt="logo" />
+        <div className="flex items-center">
+          <img src="logo.png" alt="logo" width={70} height={70}/>
+          <span className="font-bold text-xl">​🇸​​🇺​​🇲​​🇿​</span>
+        </div>
         <button type='button' onClick={()=> window.open('https://github.com/Rnmoon')} className='black_btn'>Github</button>
       </nav>
       <motion.h1

@@ -130,10 +130,11 @@
 }
 
 .orange_gradient {
-  background: linear-gradient(to right, #f59e0b, #f97316, #fbbf24); /* from amber-500 via orange-600 to yellow-500 */
+  background: linear-gradient(to right, #007bff, #6a00ff, #ff007b); /* Adjusted to match the logo */
   -webkit-background-clip: text;
   color: transparent;
 }
+
 
 .desc {
   margin-top: 1.25rem; /* mt-5 */
